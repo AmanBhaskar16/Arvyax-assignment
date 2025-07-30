@@ -147,6 +147,7 @@ VITE_API_BASE_URL=http://localhost:5000
 * 🧾 View, edit, and manage user-created sessions
 * ⚡ Responsive and modern UI (Tailwind CSS)
 * ✅ Fully working logout
+* 🔒 Custom Error handling page for unauthorized user
 
 ---
 
