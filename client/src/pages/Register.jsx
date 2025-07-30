@@ -12,7 +12,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/auth/register', { email, password });
+      await axios.post('/api/auth/register', { email, password });
       toast.success('Registration successful');
       navigate('/login');
     } catch (err) {

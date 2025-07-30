@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get('/sessions')
+      .get('/api/sessions')
       .then((res) => setPublicSessions(res.data))
       .catch((err) => {
         if (err.response?.status === 401) {

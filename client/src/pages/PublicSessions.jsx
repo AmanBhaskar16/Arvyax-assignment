@@ -9,7 +9,7 @@ const PublicSessions = () => {
   useEffect(() => {
     const fetchPublicSessions = async () => {
       try {
-        const res = await axios.get('/sessions');
+        const res = await axios.get('/api/sessions');
         setSessions(res.data);
       } catch (err) {
         toast.error('Failed to load public sessions');

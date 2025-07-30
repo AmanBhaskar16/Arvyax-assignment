@@ -31,7 +31,7 @@ const SessionEditorOptimized = () => {
     };
 
     // Always save as draft for auto-save (don't auto-publish)
-    await axios.post('/my-sessions/save-draft', { ...payload, status: 'draft' });
+    await axios.post('/api/my-sessions/save-draft', { ...payload, status: 'draft' });
     
     toast.success('Auto-saved successfully', { 
       position: "bottom-right",
@@ -57,7 +57,7 @@ const SessionEditorOptimized = () => {
     const checkAuthAndFetch = async () => {
       try {
         if (id) {
-          const res = await axios.get(`/my-sessions/${id}`);
+          const res = await axios.get(`/api/my-sessions/${id}`);
           const fetchedForm = {
             title: res.data.title,
             tags: res.data.tags.join(', '),
@@ -106,9 +106,9 @@ const SessionEditorOptimized = () => {
       };
 
       if (form.status === 'published') {
-        await axios.post('/my-sessions/publish', payload);
+        await axios.post('/api/my-sessions/publish', payload);
       } else {
-        await axios.post('/my-sessions/save-draft', payload);
+        await axios.post('/api/my-sessions/save-draft', payload);
       }
 
       toast.success(`Session ${id ? 'updated' : 'created'} successfully`);

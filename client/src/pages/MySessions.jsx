@@ -16,7 +16,7 @@ const MySessions = () => {
   useEffect(() => {
     const fetchSessions = async () => {
       try {
-        const res = await axios.get('/my-sessions');
+        const res = await axios.get('/api/my-sessions');
         setSessions(res.data);
       } catch (err) {
         if (err.response?.status === 401) {
