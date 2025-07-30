@@ -18,9 +18,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // API Routes
-// app.get('/', (req, res) => {
-//   res.send("Hello Aman kya haal hai ");
-// });
+app.get('/', (req, res) => {
+  res.send("Hello Aman kya haal hai ");
+});
 app.use('/api/auth', authRoutes);
 app.use('/api', sessionRoutes);
 
