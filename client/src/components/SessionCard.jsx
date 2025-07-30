@@ -16,7 +16,7 @@ const SessionCard = ({
   // function to save drafted session
   const handleSaveDraft = async () => {
     try {
-      await axios.post('/my-sessions/save-draft', {
+      await axios.post('/api/my-sessions/save-draft', {
         _id: session._id,
         ...session,
       });
@@ -30,7 +30,7 @@ const SessionCard = ({
   // function to publish a drafted session
   const handlePublish = async () => {
     try {
-      await axios.post('/my-sessions/publish', {
+      await axios.post('/api/my-sessions/publish', {
         _id: session._id,
         ...session,
       });
