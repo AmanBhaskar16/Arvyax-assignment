@@ -7,7 +7,7 @@ import authRoutes from './routes/authRouter.js';
 import sessionRoutes from './routes/sessionRouter.js';
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Database connection
 await connectDB();
