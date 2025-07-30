@@ -2,6 +2,7 @@ import React from 'react';
 import SessionCard from './SessionCard';
 import Loader from './Loader';
 
+// Publishedsessions component is for rendering all the published posts by users
 const PublishedSessions = ({ sessions = [], loading = false }) => {
   if (loading) {
     return (

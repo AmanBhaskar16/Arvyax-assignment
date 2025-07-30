@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// User schema for the blue print of the details stored for a user
 const userSchema = new mongoose.Schema({
 
   email: { type: String,

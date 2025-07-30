@@ -17,6 +17,7 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     clearToken();
+    toast.success("Logged out successfully");
     navigate('/login');
   };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PlusCircle, List } from 'lucide-react';
 
+// Dashboard Action For Creating Divs My-sessions and create sessions in the dashbaord page
 const DashboardActions = () => {
   const navigate = useNavigate();
 

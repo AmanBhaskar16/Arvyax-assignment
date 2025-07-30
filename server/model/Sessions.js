@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// Session schema for the blue print of the details stored for a session
 const sessionSchema = new mongoose.Schema({
   user_id: {
       type: mongoose.Schema.Types.ObjectId,

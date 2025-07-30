@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+// Loader component to show while while data is being fetched
 const Loader = ({ message = 'Loading...' }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-50 to-indigo-100">

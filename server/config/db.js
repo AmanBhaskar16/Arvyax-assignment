@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// Config file to connect express application to the database
 const connectDB = async () => {
   try {
     mongoose.connection.on('connected',()=> console.log('DB connected'));

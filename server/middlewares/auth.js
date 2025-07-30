@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-
+// Auth middleware to authorize the user for pages
 export default (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) return res.status(401).json({ message: 'Unauthorized' });

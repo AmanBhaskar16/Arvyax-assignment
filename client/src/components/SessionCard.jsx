@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { FileText, Edit2, Save, Upload } from 'lucide-react';
 import axios from '../../utils/axiosInstance';
 import { toast } from 'react-toastify';
 
+// Session card component used for showing sessions in published sessions and my-sessions
 const SessionCard = ({
   session,
   showStatus = false,
@@ -11,6 +13,7 @@ const SessionCard = ({
   onEditClick = null,
   onStatusChange = null, // callback to refresh data in parent
 }) => {
+  // function to save drafted session
   const handleSaveDraft = async () => {
     try {
       await axios.post('/my-sessions/save-draft', {
@@ -24,6 +27,7 @@ const SessionCard = ({
     }
   };
 
+  // function to publish a drafted session
   const handlePublish = async () => {
     try {
       await axios.post('/my-sessions/publish', {
@@ -100,7 +104,7 @@ const SessionCard = ({
           {onEditClick && (
             <button
               onClick={onEditClick}
-              className="flex items-center gap-2 text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
+              className="flex items-center gap-2 cursor-pointer text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
             >
               <Edit2 size={16} />
               Edit
@@ -111,14 +115,14 @@ const SessionCard = ({
             <>
               <button
                 onClick={handleSaveDraft}
-                className="flex items-center gap-2 text-sm bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition"
+                className="flex items-center gap-2 cursor-pointer text-sm bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition"
               >
                 <Save size={16} />
                 Save Draft
               </button>
               <button
                 onClick={handlePublish}
-                className="flex items-center gap-2 text-sm bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition"
+                className="flex items-center gap-2 cursor-pointer text-sm bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition"
               >
                 <Upload size={16} />
                 Publish
@@ -132,7 +136,7 @@ const SessionCard = ({
             href={session.json_file_url}
             target="_blank"
             rel="noreferrer"
-            className="text-sm bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md transition"
+            className="text-sm cursor-pointer bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md transition"
           >
             View JSON
           </a>

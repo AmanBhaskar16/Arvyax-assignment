@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AlertTriangle } from 'lucide-react';
 
+// error page for Not logged in user
 const NotLoggedIn = ({ message = "You need to log in to access this page." }) => {
   const navigate = useNavigate();
 

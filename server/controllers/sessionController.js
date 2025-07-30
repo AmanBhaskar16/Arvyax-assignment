@@ -1,5 +1,6 @@
 import Session from '../model/Sessions.js';
 
+// Api endpoint for getting all the published sessions by all users
 export const getPublicSessions = async (_, res) => {
   try {
     const sessions = await Session.find({ status: 'published' });
@@ -9,6 +10,7 @@ export const getPublicSessions = async (_, res) => {
   }
 };
 
+// Api endpoint for getting my-sessions for a particular user
 export const getMySessions = async (req, res) => {
   try {
     const sessions = await Session.find({ user_id: req.userId });
@@ -18,6 +20,7 @@ export const getMySessions = async (req, res) => {
   }
 };
 
+// API endpoint to get session by ID for editing the session
 export const getSessionById = async (req, res) => {
   try {
     const session = await Session.findOne({ _id: req.params.id, user_id: req.userId });
@@ -28,6 +31,7 @@ export const getSessionById = async (req, res) => {
   }
 };
 
+// API endpoint to save the drafted session
 export const saveDraft = async (req, res) => {
   const { _id, title, tags, json_file_url } = req.body;
   try {
@@ -47,6 +51,7 @@ export const saveDraft = async (req, res) => {
   }
 };
 
+// API endpoint to publish a drafted session
 export const publishSession = async (req, res) => {
   const { _id, title, tags, json_file_url } = req.body;
 
